@@ -1,0 +1,26 @@
+{
+    "name": "sae-unicef",
+    "version": "1.0.7",
+    "description": "",
+    "main": "src/server.js",
+    "scripts": {
+        "start": "node src/server.js",
+        "clean": "IF EXIST dist rmdir dist /s /q",
+        "action": "node ./src/cron/action.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "compression": "^1.7.4",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.3",
+        "ejs": "^3.1.8",
+        "express": "^4.18.1"
+    },
+    "devDependencies": {
+        "@types/compression": "^1.7.5",
+        "@types/cors": "^2.8.17",
+        "@types/dotenv": "^8.2.0",
+        "@types/express": "^4.17.13"
+    }
+}
