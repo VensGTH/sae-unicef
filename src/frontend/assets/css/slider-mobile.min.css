@@ -76,7 +76,12 @@
         font-size: 1.8rem;
     }
     .new_hero .new_hero__right {
+        height: 350px;
         margin: 0;
+        -o-object-fit: cover;
+        object-fit: cover;
+        overflow: hidden;
+        width: 100%;
     }
     .new_hero .hero__bottom {
         padding: 0;
@@ -198,7 +203,8 @@
         display: flex;
         height: 400px;
         justify-content: center;
-        padding: 0;
+        overflow: hidden;
+        padding: 20px;
     }
     .upcoming-events-left .section-h2 h2 {
         font-size: 28px;
@@ -209,7 +215,8 @@
     .upcoming-events-left .te {
         display: flex;
         flex-direction: column;
-        margin: 20px;
+        position: static;
+        width: 100%;
     }
     .upcoming-events-right {
         flex: 0;

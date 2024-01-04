@@ -23,12 +23,12 @@ html {
 body {
     margin: 0;
 }
-menu,
 article,
 aside,
 details,
 footer,
 header,
+menu,
 nav,
 section {
     display: block;
@@ -41,9 +41,6 @@ figcaption,
 figure,
 main {
     display: block;
-}
-figure {
-    margin: 1em 40px;
 }
 hr {
     box-sizing: content-box;
@@ -67,6 +64,7 @@ a:hover {
 abbr[title] {
     border-bottom: none;
     text-decoration: underline;
+    -webkit-text-decoration: underline dotted;
     text-decoration: underline dotted;
 }
 b,
@@ -116,14 +114,11 @@ textarea {
     margin: 0;
 }
 button,
-input {
-}
-button,
 select {
     text-transform: none;
 }
-[type='submit'],
 [type='reset'],
+[type='submit'],
 button,
 html [type='button'] {
     -webkit-appearance: button;
@@ -139,7 +134,7 @@ button::-moz-focus-inner {
 [type='reset']:-moz-focusring,
 [type='submit']:-moz-focusring,
 button:-moz-focusring {
-    outline: ButtonText dotted 1px;
+    outline: 1px dotted ButtonText;
 }
 fieldset {
     border: 1px solid silver;
@@ -153,8 +148,6 @@ legend {
     max-width: 100%;
     padding: 0;
     white-space: normal;
-}
-progress {
 }
 textarea {
     overflow: auto;
@@ -186,4 +179,4 @@ summary {
 [hidden],
 template {
     display: none;
-} /*# sourceMappingURL=normalize.min.css.map */
+}
