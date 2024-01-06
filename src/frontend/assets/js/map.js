@@ -103,7 +103,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
 
         layer.bringToFront();
-        layer.bindPopup('<b>This is : </b>' + layer.feature.properties.nom);
+        layer.bindPopup(`<b>${layer.feature.properties.nom.trim()}</b>`);
     }
 
     function resetHighlight(e) {
