@@ -53,8 +53,10 @@ app.use((req, res, next) => {
 });
 /** Routes here */
 app.get('/', function (req, res) {
-    res.sendFile(path_1.default + 'index.html');
+    res.status(503).json({statusCode: 'PS503', message: "Down for maintenance"});
+    //res.sendFile(path_1.default + 'index.html');
 });
+
 /** Error handling */
 app.use((req, res, next) => {
     const error = new Error('Not found');
