@@ -34,7 +34,7 @@ app.use((0, compression_1.default)({
     memLevel: 9
 }));
 app.use(express_1.default.json());
-app.use(express_1.default.static(__dirname + '/frontend/'));
+//app.use(express_1.default.static(__dirname + '/frontend/'));
 app.use((0, cors_1.default)());
 /** Parse the body of the request */
 app.use(body_parser_1.default.urlencoded({ extended: true }));
