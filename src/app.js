@@ -53,7 +53,7 @@ app.use((req, res, next) => {
 });
 /** Routes here */
 app.get('/', function (req, res) {
-    res.status(404).json({statusCode: 'PS503', message: "Down for maintenance"});
+    res.status(503).json({statusCode: 'PS503', message: "Down for maintenance"});
     //res.sendFile(path_1.default + 'index.html');
 });
 
