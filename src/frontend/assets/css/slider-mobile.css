@@ -81,61 +81,6 @@
         text-align: center;
     }
 
-    /** hero section **/
-    .new_hero {
-        overflow: hidden;
-    }
-
-    .new_hero-content {
-        overflow: hidden;
-    }
-
-    .new_hero .container-xl {
-        margin: 20px;
-        padding: 0;
-        overflow: hidden;
-        grid-template-columns: 100%;
-    }
-
-    .new_hero-content {
-        width: 100%;
-    }
-
-    .new_hero-content .new_hero-title {
-        font-size: 1.8rem;
-    }
-
-    /*.hero__bottom {
-        padding-left: 30px;
-        gap: 10px;
-    }*/
-    .new_hero .new_hero__right {
-        margin: 0;
-        width: 100%;
-        overflow: hidden;
-        height: 350px;
-        object-fit: cover;
-    }
-
-    .new_hero .hero__bottom {
-        padding: 0;
-        width: 100%;
-    }
-
-    .hero__bottom a {
-        width: 100%;
-    }
-
-    .hero__bottom a:last-of-type {
-        margin: 10px 0;
-    }
-
-    /** navbar **/
-
-    .navbar .nav-right__items .src__wrapper {
-        display: none;
-    }
-
     /** map section **/
     .dynamic__map #map {
         height: 400px !important;
@@ -631,18 +576,6 @@
     }
 }
 
-@media only screen and (max-width: 400px) {
-    .nav-right__items .btn {
-        margin-right: -80px !important;
-    }
-}
-
-@media only screen and (max-width: 330px) {
-    .nav-right__items .btn {
-        margin-right: -40px !important;
-    }
-}
-
 @media only screen and (max-width: 768px) {
     .header-item-right .btn {
         /*font-size: 13px;
@@ -703,12 +636,6 @@
     }
 }
 
-@media only screen and (min-width: 768px) {
-    .nav-right__items button.search {
-        display: block;
-    }
-}
-
 @media only screen and (min-width: 993px) and (max-width: 1300px) {
     .upcoming-events {
         padding: 0 50px;
@@ -731,5 +658,23 @@
 @media only screen and (min-width: 769px) and (max-width: 1040px) {
     .header-item-right .btn {
         font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .temp-hero__bottom {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .temp-hero__bottom a:last-of-type {
+        margin: 0 0 0 10px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .upcoming-events-row {
+        flex-direction: column !important;
+        flex-wrap: wrap;
     }
 }

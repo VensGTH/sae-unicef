@@ -117,7 +117,14 @@ video {
 }
 
 .header {
-    position: sticky;
+    --h-dark: #121212;
+    --h-light: #ffffff;
+    --h-text: var(--h-light);
+    --h-text-inverse: var(--h-dark);
+    --h-background: transparent;
+    --h-mb-bg: var(--h-light);
+
+    position: fixed;
     display: block;
     top: 0;
     left: 0;
@@ -128,13 +135,23 @@ video {
     z-index: 999;
     border: none;
     outline: none;
-    background: #fafafa;
+    background: var(--h-background);
+    transition: background 250ms ease-in;
+}
+
+.header.scrolled {
+    --h-background: #fafafa;
     -webkit-box-shadow:
         0 4px 6px -1px rgba(0, 0, 0, 0.1),
         0 2px 4px -1px rgba(0, 0, 0, 0.06);
     box-shadow:
         0 4px 6px -1px rgba(0, 0, 0, 0.1),
         0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.header.scrolled .menu > ul > li > a,
+.header.scrolled .header-item-right .search > i {
+    --h-text: var(--h-text-inverse) !important;
 }
 
 .header .wrapper {
@@ -227,6 +244,7 @@ video {
 
 .header-item-right .search > i {
     font-size: 24px;
+    color: var(--h-text);
 }
 
 @media only screen and (min-width: 768px) {
@@ -253,11 +271,11 @@ video {
     position: relative;
     font-family: inherit;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.25;
     border: none;
     outline: none;
-    color: #121212;
+    color: var(--h-text);
     text-transform: capitalize;
     text-rendering: optimizeLegibility;
     -webkit-transition: color 0.3s ease-in-out;
@@ -332,7 +350,7 @@ video {
     display: inline-block;
     font-family: inherit;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.25;
     padding: 0.5rem 0;
     border: none;
@@ -436,6 +454,14 @@ video {
         order: 3;
     }
 
+    .header .menu > ul > li > a {
+        --h-text: var(--h-text-inverse);
+    }
+
+    .header.scrolled .header-item-right .menu-mobile-trigger span {
+        --h-mb-bg: var(--h-dark);
+    }
+
     .header-item-left,
     .header-item-right {
         -webkit-box-flex: 0;
@@ -443,6 +469,9 @@ video {
         flex: 0 0 auto;
     }
 
+    .header .menu > ul > li > a {
+        font-weight: 500;
+    }
     .wrapper {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -477,7 +506,7 @@ video {
         outline: none;
         opacity: 1;
         border-radius: 0.25rem;
-        background: #121212;
+        background: var(--h-mb-bg);
         -webkit-transform: rotate(0deg);
         -ms-transform: rotate(0deg);
         transform: rotate(0deg);

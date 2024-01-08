@@ -34,7 +34,7 @@ app.use((0, compression_1.default)({
     memLevel: 9
 }));
 app.use(express_1.default.json());
-//app.use(express_1.default.static(__dirname + '/frontend/'));
+app.use(express_1.default.static(__dirname + '/frontend/'));
 app.use((0, cors_1.default)());
 /** Parse the body of the request */
 app.use(body_parser_1.default.urlencoded({ extended: true }));
@@ -53,10 +53,8 @@ app.use((req, res, next) => {
 });
 /** Routes here */
 app.get('/', function (req, res) {
-    res.status(503).json({statusCode: 'PS503', message: "Down for maintenance"});
-    //res.sendFile(path_1.default + 'index.html');
+    res.sendFile(path_1.default + 'index.html');
 });
-
 /** Error handling */
 app.use((req, res, next) => {
     const error = new Error('Not found');

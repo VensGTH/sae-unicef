@@ -110,7 +110,6 @@ var swiper = new Swiper('.event-item-wrapper', {
         }
     }
 });
-
 /* ============== intersection observe Swiper ============== */
 const observerSwiper = new IntersectionObserver(
     function (entries, self) {
@@ -218,3 +217,29 @@ window.onresize = function () {
         }
     }
 };
+
+//header nav
+const header = document.querySelector('.header');
+const heroSection = document.querySelector('.hero');
+const observerHeader = new IntersectionObserver(
+    function (entries, self) {
+        entries.forEach((entry) => {
+            //console.log(entry.target);
+            if (!entry.isIntersecting) {
+                //console.log("❌" + entry.target.id + ' is not interesecting'); // stop other swiper
+                header.classList.add('scrolled');
+            } else {
+                //console.log("✅" + entry.target.id + ' is interesecting');
+                header.classList.remove('scrolled');
+            }
+        });
+    },
+    {
+        root: null,
+        threshold: 0.75,
+        rootMargin: '200px'
+    }
+);
+
+/* ============== intersection observe Swiper: init ============== */
+observerHeader.observe(heroSection);
